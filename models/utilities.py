@@ -24,7 +24,7 @@ Funcao usada para:
     -> valor da terceira linha: tamanho final atingido pelo jogador atual
 '''
 def writeInfoPlayer(SNAKE):
-    localArquivo = 'PLAYER_INFO/player01.txt'
+    localArquivo = os.path.join(os.getcwd() + '/PLAYER_INFO/player01.txt')
     print("Criando arquivo para armazenar info do jogador...")
     #abrindo arquivo para escrita
     with open(localArquivo, 'w') as arquivo:
@@ -44,7 +44,7 @@ Funcao usada para:
 def readInfoPlayer():
     info = []
     #abrindo arquivo para leitura
-    localArquivo = '/PLAYER_INFO/player01.txt'
+    localArquivo = os.path.join(os.getcwd() + '/PLAYER_INFO/player01.txt')
     print("Lendo arquivo do jogador...")
     with open(localArquivo, 'r+') as arquivo:
         #lendo cada linha de maneira individual
@@ -60,7 +60,7 @@ Funcao usada para:
     OBS: essa funcao deve sempre ser usada ao sair de alguma fase e regressar ao menu!!!
 '''
 def removeInfoPlayer():
-    localArquivo = '/PLAYER_INFO/player01.txt'
+    localArquivo = os.path.join(os.getcwd() + '/PLAYER_INFO/player01.txt')
     if os.path.isfile(localArquivo):
         #limpando conteudo do arquivo
         with open(localArquivo, 'w') as arquivo:
